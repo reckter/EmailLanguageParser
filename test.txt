@@ -1,0 +1,21 @@
+
+alias read "untag core/unread"
+alias unread "tag core/unread"
+alias is:read "not:tag:unread"
+alias is:unread "tag:unread"
+
+on send to:xalum.net{
+  tag xalumnet
+  from:hannes@guedelheofer.de{
+    tag work
+    forward mischa@hmlz.de
+  }
+
+  everything{
+    tag cool
+  }
+}
+
+
+read is:unread
+unread is:read
